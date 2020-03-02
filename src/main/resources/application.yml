@@ -1,0 +1,20 @@
+riotgames:
+  token: RGAPI-092c2829-409b-48cd-b85d-6d83d8d40092
+  basePath: https://br1.api.riotgames.com/lol
+  static:
+    url:
+      champions:
+        all: http://ddragon.leagueoflegends.com/cdn/10.4.1/data/pt_BR/champion.json
+        by-name: http://ddragon.leagueoflegends.com/cdn/10.4.1/data/pt_BR/champion/%s.json
+        images:
+          loading: http://ddragon.leagueoflegends.com/cdn/img/champion/loading/%s_%d.jpg
+          assets: http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/%s.png
+      maps: http://static.developer.riotgames.com/docs/lol/maps.json
+      game-modes: http://static.developer.riotgames.com/docs/lol/gameModes.json
+      game-types: http://static.developer.riotgames.com/docs/lol/gameTypes.json
+      items:
+        all: http://ddragon.leagueoflegends.com/cdn/10.4.1/data/pt_BR/item.json
+        images: http://ddragon.leagueoflegends.com/cdn/10.4.1/img/item/%d.png
+      summoner-spells:
+        all: http://ddragon.leagueoflegends.com/cdn/10.4.1/data/pt_BR/summoner.json
+        by-id: http://ddragon.leagueoflegends.com/cdn/10.4.1/img/spell/%s.png
