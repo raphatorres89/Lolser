@@ -15,7 +15,7 @@ public class StaticResponseBodyStub {
 
     private static Map<String, ChampionDTO> getData() {
         Map<String, ChampionDTO> map = new LinkedHashMap<>();
-        map.put("Garen", ChampionDTOStub.valid());
+        map.put("Garen", ChampionDTOStub.createGaren());
         return map;
     }
 }

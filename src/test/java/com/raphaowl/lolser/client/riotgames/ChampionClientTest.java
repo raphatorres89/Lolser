@@ -1,10 +1,8 @@
 package com.raphaowl.lolser.client.riotgames;
 
 import com.raphaowl.lolser.client.riotgames.response.ChampionDTO;
-import com.raphaowl.lolser.client.riotgames.response.ChampionDTOStub;
 import com.raphaowl.lolser.client.riotgames.response.StaticResponseBody;
 import com.raphaowl.lolser.client.riotgames.response.StaticResponseBodyStub;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -14,11 +12,10 @@ import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -71,13 +68,13 @@ public class ChampionClientTest {
     }
 
     @Test
-    public void whenCallFindByName_thenThrowException() {
-        String name = "Garen";
+    public void givenInvalidName_whenCallFindByName_thenThrowException() {
+        String invalidName = "Garem";
 
-        when(restTemplate.getForObject(eq(allUrl), eq(StaticResponseBody.class)))
+        when(restTemplate.getForObject(eq(byNameUrl), eq(StaticResponseBody.class)))
                 .thenThrow(new RestClientException("error"));
 
-        assertThrows(RestClientException.class, () -> championClient.findByName(name));
+        assertThrows(RestClientException.class, () -> championClient.findByName(invalidName));
     }
 
     private void contractTest(ChampionDTO championDTO) {
